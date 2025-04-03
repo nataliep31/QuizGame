@@ -5,8 +5,8 @@ questions = [
         "answer": "A"
      },
      {
-        "prompt": "Which language is primarily spoken in Brazil?",
-        "options": ["A. Spanish", "B. Portuguese", "C. English", "D. French"],
+        "prompt": "Which of the following is a fruit?",
+        "options": ["A. Spinach", "B. Tomato", "C. Celery", "D. Broccoli"],
         "answer": "B"
      },
      {
@@ -15,8 +15,8 @@ questions = [
         "answer": "B"
      },
      {
-        "prompt": "Who wrote 'To Kill A Mockingbird'?",
-        "options": ["A. Harper Lee", "B. Mark Twain", "C. J.K. Rowling", "D. Ernest Hemingway"],
+        "prompt": "Who wrote 'The Hunger Games' book?",
+        "options": ["A. Suzanne Collins", "B. Mark Twain", "C. Stephen King", "D. Danielle Steel"],
         "answer": "A"
      },
 ]
@@ -27,5 +27,12 @@ def run_quiz(questions):
         print(question["prompt"])
         for option in question["options"]:
             print(option)
-
-run_quiz(questions)  
+        answer = input("Enter your answer (A, B, C, D): ").upper()   
+        if answer == question["answer"]:
+            print("Correct! \n")
+            score += 1
+        else:
+            print("Incorrect, the correct answer was", question["answer"], "\n")  
+    print(f"You got {score} out of {len(questions)} questions correct.")      
+           
+run_quiz(questions)            
